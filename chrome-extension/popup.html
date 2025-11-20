@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ PhishGuard</h1>
+            <p class="subtitle">ai phishing detector</p>
+        </div>
+
+        <div class="api-config">
+            <input type="text" id="apiUrl" placeholder="API URL (e.g., http://localhost:5000)" />
+            <button id="saveApi" class="btn-small">save</button>
+        </div>
+
+        <div class="current-page" id="currentPage">
+            <div class="page-info">
+                <span class="label">current page:</span>
+                <span class="url" id="pageUrl">loading...</span>
+            </div>
+            <button id="checkPage" class="btn-primary">check this page</button>
+        </div>
+
+        <div class="result" id="result" style="display: none;">
+            <div class="score-section">
+                <div class="score-circle" id="scoreCircle">
+                    <span class="score-value" id="scoreValue">0</span>
+                    <span class="score-label">/100</span>
+                </div>
+                <div class="status-badge" id="statusBadge">
+                    <span id="statusEmoji">⏳</span>
+                    <span id="statusText">checking...</span>
+                </div>
+            </div>
+
+            <div class="details" id="details">
+                <div class="detail-item">
+                    <span class="detail-label">vibe:</span>
+                    <span class="detail-value" id="vibe">—</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">risk:</span>
+                    <span class="detail-value" id="risk">—</span>
+                </div>
+            </div>
+
+            <div class="explanations" id="explanations">
+                <div class="explanation-title">why tho:</div>
+                <div id="explanationsList"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="status" id="apiStatus">
+                <span class="status-dot offline"></span>
+                <span class="status-text">api: not connected</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
